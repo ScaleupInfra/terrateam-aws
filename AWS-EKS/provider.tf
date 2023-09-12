@@ -13,8 +13,8 @@ terraform {
 
 terraform {
   backend "s3" {
-    bucket = "834277767437-tf-state"
-    key    = "EKS/eks.tfstate"
+    bucket = "<your_bucket_name>"
+    key    = "//path/to/file"
     region = "us-east-1"
   }
 }
