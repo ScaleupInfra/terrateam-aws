@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mkdocs-eks-deployment
+  namespace: mkdocs
+  labels:
+    app: mkdocs-webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mkdocs-webapp
+  template:
+    metadata:
+      labels:
+        app: mkdocs-webapp
+    spec:
+      containers:
+        - name: mkdocs
+          image: sidvjsingh/mkdocs:1.1.0
+          ports:
+            - containerPort: 8000
