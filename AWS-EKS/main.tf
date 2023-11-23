@@ -61,3 +61,18 @@ resource "aws_security_group_rule" "allow_http" {
   cidr_blocks = ["0.0.0.0/0"]  
   security_group_id = module.eks.node_security_group_id
 }
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 2.7.0"
+    }
+  }
+}
+
+  provider "aws" {
+  region = "us-east-1"
+}
+
+
